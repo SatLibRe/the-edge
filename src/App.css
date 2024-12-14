@@ -5,53 +5,84 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ffcc00; /* ESPN Page 2 Yellow */
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #333; /* Dark background */
   color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  overflow: hidden; /* Prevents scrollbars */
 }
 
+/* Layout Container */
 .page2-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Left and Right Ad Columns */
+.left-ad,
+.right-ad {
+  background-color: #000; /* Black background for ads */
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.left-ad p,
+.right-ad p {
+  margin-top: 20px;
+}
+
+/* Main Content Section */
+.main-content {
+  flex: 1; /* Takes up all available space between ads */
+  background-color: #ffcc00; /* ESPN Page 2 Yellow */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
 .header {
   background-color: #a60000; /* ESPN Red */
   color: #fff;
-  padding: 10px 20px;
   text-align: center;
+  padding: 15px;
 }
 
 .page-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: bold;
+  letter-spacing: 3px;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
-/* Content */
+/* Content Columns */
 .content {
   display: flex;
-  flex-wrap: wrap;
+  flex: 1; /* Takes up remaining vertical space */
+  padding: 20px;
+  gap: 20px;
 }
 
 .left-column {
   flex: 2;
-  padding: 20px;
-  background-color: #fff;
+  background-color: #ffcc00; /* Yellow */
+  padding: 15px;
 }
 
 .right-column {
   flex: 1;
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-left: 3px solid #ddd;
+  background-color: #f4f4f4; /* Light gray */
+  border-left: 2px solid #ddd;
+  padding: 15px;
 }
 
 .main-article {
@@ -65,32 +96,30 @@ body {
 }
 
 .post-card {
-  background-color: #f9f9f9;
+  background-color: #fff;
   border: 1px solid #ddd;
-  padding: 15px;
-  margin-bottom: 20px;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .post-card h3 {
+  font-size: 1.2rem;
   color: #a60000;
 }
 
 .sidebar {
   margin-bottom: 20px;
-  padding: 10px;
   background-color: #fff;
+  padding: 10px;
   border: 1px solid #ddd;
-}
-
-.sidebar h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
 }
 
 .payout-total {
   font-size: 1.5rem;
   font-weight: bold;
   color: #a60000;
+  text-align: center;
 }
 
 /* Footer */
@@ -98,6 +127,6 @@ body {
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   font-size: 0.9rem;
 }
