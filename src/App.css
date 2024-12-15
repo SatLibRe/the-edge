@@ -12,7 +12,7 @@ html, body {
   color: #333;
   font-family: Arial, sans-serif;
   line-height: 1.5;
-  overflow: hidden; /* Prevents scrollbars */
+
 }
 
 /* Layout Container */

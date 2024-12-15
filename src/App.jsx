@@ -8,11 +8,8 @@ function App() {
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/posts/")
       .then((response) => response.json())
-      .then((data) => {
-        const sortedData = data.sort(
-          (a, b) => new Date(b.date_bet_placed) - new Date(a.date_bet_placed)
-        );
-        setPosts(sortedData);
+      .then((data) => {    
+        setPosts(data);
         const total = data.reduce((sum, post) => sum + post.net_pl, 0);
         setTotalPayout(total);
       })
@@ -42,8 +39,9 @@ function App() {
               <h2 className="article-title">Time To Grow Up</h2>
               <p>Your bets, payouts, and net performances are showcased below.</p>
             </div>
-            {posts.map((post) => (
+            {posts.map((post) => (      
               <div key={post.id} className="post-card">
+                {console.log(post.net_pl)}              
                 <h3>
                   {post.team_for} vs. {post.team_against}
                 </h3>
