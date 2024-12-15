@@ -27,8 +27,8 @@ function App() {
       <div className="main-content">
         {/* Header */}
         <header className="header">
-          <h1 className="page-title">PAGE 2</h1>
-          <h2 className="subtitle">Sports Betting Overview</h2>
+          <h1 className="page-title">THE EDGE</h1>
+          <h2 className="subtitle">Here to win -- and whine</h2>
         </header>
 
         {/* Main Content */}
@@ -36,8 +36,8 @@ function App() {
           {/* Left Column */}
           <div className="left-column">
             <div className="main-article">
-              <h2 className="article-title">Time To Grow Up</h2>
-              <p>Your bets, payouts, and net performances are showcased below.</p>
+              <h2 className="article-title">THE EDGE</h2>
+              <p>Here to win -- and whine</p>
             </div>
             {posts.map((post) => (      
               <div key={post.id} className="post-card">
@@ -64,6 +64,11 @@ function App() {
                 <p>
                   <strong>Amount Bet:</strong> ${post.amount_bet}
                 </p>
+                {post.content != null && (
+                <p>
+                  <strong>Thoughts:</strong> {post.content}
+                </p>
+                )}
               </div>
             ))}
           </div>

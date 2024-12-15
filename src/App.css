@@ -15,6 +15,11 @@ html, body {
 
 }
 
+.edgeHero {
+  height: 50%;
+  width: 50%;
+}
+
 /* Layout Container */
 .page2-container {
   display: flex;
@@ -52,7 +57,30 @@ html, body {
   color: #fff;
   text-align: center;
   padding: 15px;
+  position: relative; /* Positioning context for absolute children */
+  background-image: url('/EdgeHero.png'); /* Set image as background */
+  background-size: cover; /* Ensure the image covers the header */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  height: 50vh; /* Adjust the height of the header */
 }
+
+/* Optional: Adjust the position of the text in the header */
+.page-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #a60000; /* ESPN Red */
+  letter-spacing: 3px;
+  position: relative; /* Keep it above the background image */
+  z-index: 1; /* Ensure it's above the background */
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  position: relative; /* Ensure it stays on top of the background image */
+  z-index: 1; /* Ensure it's above the background */
+}
+
 
 .page-title {
   font-size: 3.5rem;
